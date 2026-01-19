@@ -28,7 +28,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" onClick={handleNavClick} className="flex items-center">
             <img
-              src="/logo.png"
+              src="/logoauto.png"
               alt="KD Autocars"
               className="h-12 md:h-14 w-auto"
             />
