@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CarCard from "@/components/CarCard";
 import CTASection from "@/components/CTASection";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { carsForSale } from "@/data/cars";
 
 const Sale = () => {
@@ -44,6 +45,7 @@ const Sale = () => {
         <CTASection />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

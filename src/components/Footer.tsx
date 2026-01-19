@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <footer className="bg-secondary border-t border-border">
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div>
             <Link to="/" className="inline-block mb-4">
               <span className="font-display text-3xl tracking-wider">
                 <span className="text-foreground">KD</span>
@@ -36,25 +36,6 @@ const Footer = () => {
                 <Phone size={20} />
               </a>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-display text-xl mb-4 text-primary">Lidhje të Shpejta</h4>
-            <nav className="flex flex-col gap-2">
-              <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
-                Ballina
-              </Link>
-              <Link to="/rent" className="text-muted-foreground hover:text-foreground transition-colors">
-                Makina me Qira
-              </Link>
-              <Link to="/sale" className="text-muted-foreground hover:text-foreground transition-colors">
-                Makina për Shitje
-              </Link>
-              <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                Kontakt
-              </Link>
-            </nav>
           </div>
 
           {/* Contact */}

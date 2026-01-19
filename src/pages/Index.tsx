@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import FeaturedSection from "@/components/FeaturedSection";
 import CTASection from "@/components/CTASection";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
         <CTASection />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

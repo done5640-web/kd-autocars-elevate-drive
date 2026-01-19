@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { Button } from "@/components/ui/button";
 import { Instagram, MessageCircle, Phone, Mail, MapPin, ArrowRight, Clock } from "lucide-react";
 
@@ -190,6 +191,7 @@ const Contact = () => {
         </section>
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

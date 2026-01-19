@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CarCard from "@/components/CarCard";
 import CTASection from "@/components/CTASection";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { carsForRent } from "@/data/cars";
 
 const Rent = () => {
@@ -13,7 +14,7 @@ const Rent = () => {
         <section className="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
           <div className="absolute inset-0 hero-gradient opacity-50" />
           <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-2xl">
               <p className="text-primary text-sm uppercase tracking-widest mb-3">
@@ -44,6 +45,7 @@ const Rent = () => {
         <CTASection />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
