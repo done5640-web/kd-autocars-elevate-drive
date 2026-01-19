@@ -17,14 +17,14 @@ const Sale = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-2xl">
               <p className="text-primary text-sm uppercase tracking-widest mb-3">
-                Available Now
+                Në Dispozicion Tani
               </p>
               <h1 className="font-display text-5xl md:text-7xl text-foreground mb-6">
-                Cars for <span className="gradient-text">Sale</span>
+                Makina për <span className="gradient-text">Shitje</span>
               </h1>
               <p className="text-muted-foreground text-lg">
-                Own your dream car. Premium selection of luxury and exotic vehicles 
-                with verified history and competitive pricing.
+                Zotëroni makinën e ëndrrave tuaja. Përzgjedhje premium e automjeteve
+                me histori të verifikuar dhe çmime konkurruese.
               </p>
             </div>
           </div>

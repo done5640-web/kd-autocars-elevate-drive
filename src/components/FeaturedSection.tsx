@@ -20,15 +20,15 @@ const FeaturedSection = ({ type }: FeaturedSectionProps) => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
             <p className="text-primary text-sm uppercase tracking-widest mb-2">
-              {type === "rent" ? "Rental Fleet" : "Available Now"}
+              {type === "rent" ? "Flota Jonë" : "Në Dispozicion Tani"}
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-foreground">
-              {type === "rent" ? "Cars for Rent" : "Cars for Sale"}
+              {type === "rent" ? "Makina me Qira" : "Makina për Shitje"}
             </h2>
           </div>
           <Link to={type === "rent" ? "/rent" : "/sale"}>
             <Button variant="heroOutline" className="group">
-              View All
+              Shiko Të Gjitha
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>

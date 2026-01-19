@@ -16,14 +16,14 @@ const Contact = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-2xl">
               <p className="text-primary text-sm uppercase tracking-widest mb-3">
-                Get in Touch
+                Na Kontaktoni
               </p>
               <h1 className="font-display text-5xl md:text-7xl text-foreground mb-6">
-                Contact <span className="gradient-text">Us</span>
+                Kontakt <span className="gradient-text">Neve</span>
               </h1>
               <p className="text-muted-foreground text-lg">
-                Have questions about our cars? Want to schedule a viewing or discuss pricing? 
-                We're here to help make your automotive dreams come true.
+                Keni pyetje rreth makinave tona? Dëshironi të planifikoni një vizitë ose të diskutoni çmimet?
+                Jemi këtu për t'ju ndihmuar të realizoni ëndrrat tuaja automobilistike.
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@ const Contact = () => {
               <div className="space-y-6">
                 {/* Instagram Card */}
                 <a
-                  href="https://instagram.com/kdautocars"
+                  href="https://instagram.com/kd.autocars"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="card-premium p-6 rounded-xl flex items-center gap-6 group"
@@ -47,8 +47,8 @@ const Contact = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-display text-xl text-foreground mb-1">Instagram</h3>
-                    <p className="text-primary font-medium">@kdautocars</p>
-                    <p className="text-muted-foreground text-sm">DM us for quick responses</p>
+                    <p className="text-primary font-medium">@kd.autocars</p>
+                    <p className="text-muted-foreground text-sm">Na dërgoni mesazh për përgjigje të shpejta</p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
@@ -66,7 +66,7 @@ const Contact = () => {
                   <div className="flex-1">
                     <h3 className="font-display text-xl text-foreground mb-1">WhatsApp</h3>
                     <p className="text-primary font-medium">+1 (234) 567-890</p>
-                    <p className="text-muted-foreground text-sm">Chat with us anytime</p>
+                    <p className="text-muted-foreground text-sm">Bisedoni me ne në çdo kohë</p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
@@ -80,9 +80,9 @@ const Contact = () => {
                     <Phone size={28} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-display text-xl text-foreground mb-1">Phone</h3>
+                    <h3 className="font-display text-xl text-foreground mb-1">Telefon</h3>
                     <p className="text-primary font-medium">+1 (234) 567-890</p>
-                    <p className="text-muted-foreground text-sm">Call us directly</p>
+                    <p className="text-muted-foreground text-sm">Na telefononi drejtpërdrejt</p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
@@ -98,7 +98,7 @@ const Contact = () => {
                   <div className="flex-1">
                     <h3 className="font-display text-xl text-foreground mb-1">Email</h3>
                     <p className="text-primary font-medium">info@kdautocars.com</p>
-                    <p className="text-muted-foreground text-sm">For inquiries & partnerships</p>
+                    <p className="text-muted-foreground text-sm">Për pyetje dhe partneritete</p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
@@ -109,7 +109,7 @@ const Contact = () => {
                 {/* Info Box */}
                 <div className="card-premium p-8 rounded-xl">
                   <h3 className="font-display text-2xl text-foreground mb-6">
-                    Why Choose <span className="text-primary">KD Autocars?</span>
+                    Pse të Zgjidhni <span className="text-primary">KD Autocars?</span>
                   </h3>
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
@@ -117,8 +117,8 @@ const Contact = () => {
                         <span className="w-2 h-2 rounded-full bg-primary" />
                       </span>
                       <div>
-                        <p className="text-foreground font-medium">Handpicked Premium Selection</p>
-                        <p className="text-muted-foreground text-sm">Every vehicle in our fleet is carefully selected for quality and performance</p>
+                        <p className="text-foreground font-medium">Përzgjedhje Premium e Selektuar</p>
+                        <p className="text-muted-foreground text-sm">Çdo automjet në flotën tonë është zgjedhur me kujdes për cilësi dhe performancë</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -126,8 +126,8 @@ const Contact = () => {
                         <span className="w-2 h-2 rounded-full bg-primary" />
                       </span>
                       <div>
-                        <p className="text-foreground font-medium">Transparent Pricing</p>
-                        <p className="text-muted-foreground text-sm">No hidden fees, competitive rates for rent and purchase</p>
+                        <p className="text-foreground font-medium">Çmime Transparente</p>
+                        <p className="text-muted-foreground text-sm">Asnjë tarifë e fshehur, tarifa konkurruese për qira dhe blerje</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -135,8 +135,8 @@ const Contact = () => {
                         <span className="w-2 h-2 rounded-full bg-primary" />
                       </span>
                       <div>
-                        <p className="text-foreground font-medium">Exceptional Service</p>
-                        <p className="text-muted-foreground text-sm">Personal attention from inquiry to delivery</p>
+                        <p className="text-foreground font-medium">Shërbim i Jashtëzakonshëm</p>
+                        <p className="text-muted-foreground text-sm">Vëmendje personale nga kërkesa deri në dorëzim</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -144,8 +144,8 @@ const Contact = () => {
                         <span className="w-2 h-2 rounded-full bg-primary" />
                       </span>
                       <div>
-                        <p className="text-foreground font-medium">Flexible Options</p>
-                        <p className="text-muted-foreground text-sm">Daily, weekly, monthly rentals & financing available</p>
+                        <p className="text-foreground font-medium">Opsione Fleksibël</p>
+                        <p className="text-muted-foreground text-sm">Qira ditore, javore, mujore dhe financim i disponueshëm</p>
                       </div>
                     </li>
                   </ul>
@@ -155,20 +155,20 @@ const Contact = () => {
                 <div className="card-premium p-8 rounded-xl">
                   <div className="flex items-center gap-3 mb-4">
                     <Clock className="text-primary" size={24} />
-                    <h3 className="font-display text-xl text-foreground">Business Hours</h3>
+                    <h3 className="font-display text-xl text-foreground">Orari i Punës</h3>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Monday - Friday</span>
-                      <span className="text-foreground">9:00 AM - 8:00 PM</span>
+                      <span className="text-muted-foreground">E Hënë - E Premte</span>
+                      <span className="text-foreground">9:00 - 20:00</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Saturday</span>
-                      <span className="text-foreground">10:00 AM - 6:00 PM</span>
+                      <span className="text-muted-foreground">E Shtunë</span>
+                      <span className="text-foreground">10:00 - 18:00</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Sunday</span>
-                      <span className="text-foreground">By Appointment</span>
+                      <span className="text-muted-foreground">E Diel</span>
+                      <span className="text-foreground">Me Takim</span>
                     </div>
                   </div>
                 </div>
@@ -177,11 +177,11 @@ const Contact = () => {
                 <div className="card-premium p-8 rounded-xl">
                   <div className="flex items-center gap-3 mb-4">
                     <MapPin className="text-primary" size={24} />
-                    <h3 className="font-display text-xl text-foreground">Our Location</h3>
+                    <h3 className="font-display text-xl text-foreground">Lokacioni Ynë</h3>
                   </div>
                   <p className="text-muted-foreground">
-                    Premium automotive showroom in a prime location. 
-                    Contact us for directions and viewing appointments.
+                    Salloni i automjeteve premium në një lokacion kryesor.
+                    Na kontaktoni për udhëzime dhe takime për vizitë.
                   </p>
                 </div>
               </div>

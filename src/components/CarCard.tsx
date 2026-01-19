@@ -25,7 +25,7 @@ const CarCard = ({ car, onViewDetails }: CarCardProps) => {
         {/* Featured Badge */}
         {car.featured && (
           <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-            Featured
+            E Zgjedhur
           </div>
         )}
 
@@ -33,9 +33,9 @@ const CarCard = ({ car, onViewDetails }: CarCardProps) => {
         <div className="absolute bottom-4 right-4">
           <div className="bg-card/90 backdrop-blur-sm rounded-lg px-4 py-2 border border-primary/30">
             <span className="text-primary font-bold text-xl">
-              {isRental ? `$${car.pricePerDay}` : `$${car.salePrice?.toLocaleString()}`}
+              {isRental ? `€${car.pricePerDay}` : `€${car.salePrice?.toLocaleString()}`}
             </span>
-            {isRental && <span className="text-muted-foreground text-sm">/day</span>}
+            {isRental && <span className="text-muted-foreground text-sm">/ditë</span>}
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@ const CarCard = ({ car, onViewDetails }: CarCardProps) => {
         {/* Action Buttons */}
         <div className="flex gap-2">
           <a
-            href="https://instagram.com/kdautocars"
+            href="https://instagram.com/kd.autocars"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1"

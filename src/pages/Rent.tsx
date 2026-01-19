@@ -17,14 +17,14 @@ const Rent = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-2xl">
               <p className="text-primary text-sm uppercase tracking-widest mb-3">
-                Our Fleet
+                Flota Jonë
               </p>
               <h1 className="font-display text-5xl md:text-7xl text-foreground mb-6">
-                Cars for <span className="gradient-text">Rent</span>
+                Makina me <span className="gradient-text">Qira</span>
               </h1>
               <p className="text-muted-foreground text-lg">
-                Experience the thrill of driving premium and exotic cars. 
-                Daily, weekly, or monthly rentals available with unlimited mileage.
+                Përjetoni emocionin e drejtimit të makinave premium.
+                Qira ditore, javore ose mujore të disponueshme me kilometrazh të pakufizuar.
               </p>
             </div>
           </div>

@@ -15,12 +15,12 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-muted-foreground max-w-md">
-              Premium cars for rent and sale. Experience luxury, performance, and style 
-              with our handpicked selection of exotic vehicles.
+              Makina premium me qira dhe për shitje. Përjetoni luksin, performancën dhe stilin
+              me përzgjedhjen tonë të kujdesshme të automjeteve.
             </p>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://instagram.com/kdautocars"
+                href="https://instagram.com/kd.autocars"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
@@ -40,35 +40,35 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display text-xl mb-4 text-primary">Quick Links</h4>
+            <h4 className="font-display text-xl mb-4 text-primary">Lidhje të Shpejta</h4>
             <nav className="flex flex-col gap-2">
               <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
-                Home
+                Ballina
               </Link>
               <Link to="/rent" className="text-muted-foreground hover:text-foreground transition-colors">
-                Cars for Rent
+                Makina me Qira
               </Link>
               <Link to="/sale" className="text-muted-foreground hover:text-foreground transition-colors">
-                Cars for Sale
+                Makina për Shitje
               </Link>
               <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                Contact
+                Kontakt
               </Link>
             </nav>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-xl mb-4 text-primary">Contact Us</h4>
+            <h4 className="font-display text-xl mb-4 text-primary">Na Kontaktoni</h4>
             <div className="flex flex-col gap-3">
               <a
-                href="https://instagram.com/kdautocars"
+                href="https://instagram.com/kd.autocars"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Instagram size={16} />
-                @kdautocars
+                @kd.autocars
               </a>
               <a
                 href="tel:+1234567890"
@@ -86,7 +86,7 @@ const Footer = () => {
               </a>
               <span className="flex items-center gap-2 text-muted-foreground">
                 <MapPin size={16} />
-                Premium Location
+                Lokacioni Premium
               </span>
             </div>
           </div>
@@ -95,7 +95,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} KD Autocars. All rights reserved.
+            © {new Date().getFullYear()} KD Autocars. Të gjitha të drejtat e rezervuara.
           </p>
         </div>
       </div>

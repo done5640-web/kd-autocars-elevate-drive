@@ -8,18 +8,18 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/rent", label: "Rent" },
-    { path: "/sale", label: "Buy" },
-    { path: "/contact", label: "Contact" },
+    { path: "/", label: "Ballina" },
+    { path: "/rent", label: "Qira" },
+    { path: "/sale", label: "Shitje" },
+    { path: "/contact", label: "Kontakt" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50 w-full max-w-full overflow-hidden">
+      <div className="container mx-auto px-4 max-w-full">
+        <div className="flex items-center justify-between h-16 md:h-20 w-full">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <span className="font-display text-2xl md:text-3xl tracking-wider">
@@ -46,7 +46,7 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="https://instagram.com/kdautocars"
+              href="https://instagram.com/kd.autocars"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-primary transition-colors"
@@ -54,7 +54,7 @@ const Header = () => {
               <Instagram size={20} />
             </a>
             <Button variant="hero" size="sm">
-              Get in Touch
+              Na Kontaktoni
             </Button>
           </div>
 
@@ -85,7 +85,7 @@ const Header = () => {
               ))}
               <div className="flex items-center gap-4 pt-4">
                 <a
-                  href="https://instagram.com/kdautocars"
+                  href="https://instagram.com/kd.autocars"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground/70 hover:text-primary transition-colors"
@@ -93,7 +93,7 @@ const Header = () => {
                   <Instagram size={24} />
                 </a>
                 <Button variant="hero" size="sm" className="flex-1">
-                  Get in Touch
+                  Na Kontaktoni
                 </Button>
               </div>
             </nav>
