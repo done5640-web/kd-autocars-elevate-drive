@@ -82,7 +82,7 @@ const CarCard = ({ car, onViewDetails }: CarCardProps) => {
             </Button>
           </a>
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/355699077779"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1"

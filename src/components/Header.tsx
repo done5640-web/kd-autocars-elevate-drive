@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Instagram } from "lucide-react";
+import { Menu, X, Instagram, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -56,12 +56,26 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-primary transition-colors"
+              title="Instagram"
             >
               <Instagram size={20} />
             </a>
-            <Button variant="hero" size="sm">
-              Na Kontaktoni
-            </Button>
+            <a
+              href="https://wa.me/355699077779"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/70 hover:text-primary transition-colors"
+              title="WhatsApp"
+            >
+              <MessageCircle size={20} />
+            </a>
+            <a
+              href="tel:+355699077779"
+              className="text-foreground/70 hover:text-primary transition-colors"
+              title="Telefon"
+            >
+              <Phone size={20} />
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -95,12 +109,26 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground/70 hover:text-primary transition-colors"
+                  title="Instagram"
                 >
                   <Instagram size={24} />
                 </a>
-                <Button variant="hero" size="sm" className="flex-1">
-                  Na Kontaktoni
-                </Button>
+                <a
+                  href="https://wa.me/355699077779"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/70 hover:text-primary transition-colors"
+                  title="WhatsApp"
+                >
+                  <MessageCircle size={24} />
+                </a>
+                <a
+                  href="tel:+355699077779"
+                  className="text-foreground/70 hover:text-primary transition-colors"
+                  title="Telefon"
+                >
+                  <Phone size={24} />
+                </a>
               </div>
             </nav>
           </div>

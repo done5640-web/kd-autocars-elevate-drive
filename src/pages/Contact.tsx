@@ -55,7 +55,7 @@ const Contact = () => {
 
                 {/* WhatsApp Card */}
                 <a
-                  href="https://wa.me/1234567890"
+                  href="https://wa.me/355699077779"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="card-premium p-6 rounded-xl flex items-center gap-6 group"
@@ -65,7 +65,7 @@ const Contact = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-display text-xl text-foreground mb-1">WhatsApp</h3>
-                    <p className="text-primary font-medium">+1 (234) 567-890</p>
+                    <p className="text-primary font-medium">+355 69 907 7779</p>
                     <p className="text-muted-foreground text-sm">Bisedoni me ne në çdo kohë</p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" />
@@ -73,7 +73,7 @@ const Contact = () => {
 
                 {/* Phone Card */}
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+355699077779"
                   className="card-premium p-6 rounded-xl flex items-center gap-6 group"
                 >
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
@@ -81,7 +81,7 @@ const Contact = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-display text-xl text-foreground mb-1">Telefon</h3>
-                    <p className="text-primary font-medium">+1 (234) 567-890</p>
+                    <p className="text-primary font-medium">+355 69 907 7779</p>
                     <p className="text-muted-foreground text-sm">Na telefononi drejtpërdrejt</p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" />

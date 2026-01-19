@@ -28,7 +28,7 @@ const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me/355699077779"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
@@ -71,11 +71,11 @@ const Footer = () => {
                 @kd.autocars
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+355699077779"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Phone size={16} />
-                +1 (234) 567-890
+                +355 69 907 7779
               </a>
               <a
                 href="mailto:info@kdautocars.com"

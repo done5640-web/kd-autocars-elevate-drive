@@ -42,7 +42,7 @@ const CTASection = () => {
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/355699077779" target="_blank" rel="noopener noreferrer">
               <Button variant="heroOutline" size="xl" className="group w-full sm:w-auto">
                 <MessageCircle size={20} />
                 Na Shkruani në WhatsApp
