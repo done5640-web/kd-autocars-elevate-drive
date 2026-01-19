@@ -26,11 +26,12 @@ const Header = () => {
       <div className="container mx-auto px-4 max-w-full">
         <div className="flex items-center justify-between h-16 md:h-20 w-full">
           {/* Logo */}
-          <Link to="/" onClick={handleNavClick} className="flex items-center gap-2">
-            <span className="font-display text-2xl md:text-3xl tracking-wider">
-              <span className="text-foreground">KD</span>
-              <span className="text-primary">AUTOCARS</span>
-            </span>
+          <Link to="/" onClick={handleNavClick} className="flex items-center">
+            <img
+              src="/logo.png"
+              alt="KD Autocars"
+              className="h-12 md:h-14 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

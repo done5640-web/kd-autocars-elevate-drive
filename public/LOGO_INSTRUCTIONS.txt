@@ -1,0 +1,12 @@
+Please place the KD Autocars logo image as "logo.png" in this public folder.
+
+The logo should be:
+- Named: logo.png
+- Location: public/logo.png
+- Format: PNG with transparent background recommended
+- Size: Approximately 200-300px width for best quality
+
+The header is configured to display the logo at:
+- Mobile: 48px height (h-12)
+- Desktop: 56px height (h-14)
+- Width: Auto (maintains aspect ratio)
