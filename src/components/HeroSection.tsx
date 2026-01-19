@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Car, ShoppingBag } from "lucide-react";
+import { ArrowRight, Car, ShoppingBag, Star } from "lucide-react";
 import heroImage from "@/assets/hero-car.jpg";
 
 const HeroSection = () => {
@@ -23,7 +23,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 pt-20 max-w-full">
-        <div className="max-w-3xl w-full">
+        <div className="max-w-3xl w-full ml-8 md:ml-16 lg:ml-24">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 mb-6 animate-fade-up">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -33,10 +33,10 @@ const HeroSection = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-none mb-6 animate-fade-up">
-            <span className="text-foreground">Makina Premium</span>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-none mb-6 animate-fade-up font-bold">
+            <span className="text-foreground font-extrabold">Makina Premium</span>
             <br />
-            <span className="gradient-text">Me Qira & Shitje</span>
+            <span className="gradient-text font-extrabold">Me Qira & Shitje</span>
           </h1>
 
           {/* Subtitle */}
@@ -63,19 +63,32 @@ const HeroSection = () => {
             </Link>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-border/50 animate-fade-up-delay">
-            <div>
-              <p className="font-display text-4xl md:text-5xl text-primary">50+</p>
-              <p className="text-muted-foreground text-sm uppercase tracking-wider">Makina Premium</p>
-            </div>
-            <div>
-              <p className="font-display text-4xl md:text-5xl text-primary">1K+</p>
-              <p className="text-muted-foreground text-sm uppercase tracking-wider">Klientë të Kënaqur</p>
-            </div>
-            <div>
-              <p className="font-display text-4xl md:text-5xl text-primary">5★</p>
-              <p className="text-muted-foreground text-sm uppercase tracking-wider">Vlerësimi i Klientëve</p>
+          {/* Reviews */}
+          <div className="mt-16 pt-8 border-t border-border/50 animate-fade-up-delay space-y-6">
+            <h3 className="text-primary text-sm uppercase tracking-widest font-medium">Çfarë thonë klientët tanë</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-5">
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-foreground/90 text-sm mb-3 leading-relaxed">
+                  "Shërbim fantastik! Makina ishte e pastër, moderne dhe shumë e rehatshme për udhëtimin tonë."
+                </p>
+                <p className="text-muted-foreground text-xs font-medium">— Ardit M.</p>
+              </div>
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-5">
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-foreground/90 text-sm mb-3 leading-relaxed">
+                  "Proces shumë i lehtë dhe profesional. Do t'i rekomandoj të gjithëve!"
+                </p>
+                <p className="text-muted-foreground text-xs font-medium">— Elira K.</p>
+              </div>
             </div>
           </div>
         </div>

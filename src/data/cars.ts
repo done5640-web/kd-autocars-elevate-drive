@@ -34,6 +34,7 @@ export const carsForRent: Car[] = [
     transmission: "Manuale",
     power: "320 HP",
     type: "rent",
+    featured: true,
     specs: ["Turbo 2.0L", "Paketë Sport", "Diferencial Limitues"],
   },
   {
@@ -81,6 +82,7 @@ export const carsForSale: Car[] = [
     transmission: "Automatike",
     power: "248 HP",
     type: "sale",
+    featured: true,
     specs: ["Turbo 2.0L", "Pezullim Aktiv", "Paketë Premium"],
   },
   {

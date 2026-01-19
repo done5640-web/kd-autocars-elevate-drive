@@ -8,20 +8,25 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { path: "/", label: "Ballina" },
-    { path: "/rent", label: "Qira" },
-    { path: "/sale", label: "Shitje" },
+    { path: "/", label: "Kreu" },
+    { path: "/rent", label: "Me Qera" },
+    { path: "/sale", label: "Në Shitje" },
     { path: "/contact", label: "Kontakt" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleNavClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50 w-full max-w-full overflow-hidden">
       <div className="container mx-auto px-4 max-w-full">
         <div className="flex items-center justify-between h-16 md:h-20 w-full">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" onClick={handleNavClick} className="flex items-center gap-2">
             <span className="font-display text-2xl md:text-3xl tracking-wider">
               <span className="text-foreground">KD</span>
               <span className="text-primary">AUTOCARS</span>
@@ -34,6 +39,7 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
+                onClick={handleNavClick}
                 className={`font-medium text-sm uppercase tracking-wider transition-colors hover:text-primary ${
                   isActive(link.path) ? "text-primary" : "text-foreground/70"
                 }`}
@@ -75,7 +81,7 @@ const Header = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={handleNavClick}
                   className={`font-medium text-lg uppercase tracking-wider transition-colors hover:text-primary ${
                     isActive(link.path) ? "text-primary" : "text-foreground/70"
                   }`}
