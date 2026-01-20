@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { Button } from "@/components/ui/button";
-import { Instagram, MessageCircle, Phone, Mail, MapPin, ArrowRight, Clock } from "lucide-react";
+import { Instagram, MessageCircle, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -150,28 +150,6 @@ const Contact = () => {
                       </div>
                     </li>
                   </ul>
-                </div>
-
-                {/* Hours */}
-                <div className="card-premium p-8 rounded-xl">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Clock className="text-primary" size={24} />
-                    <h3 className="font-display text-xl text-foreground">Orari i Punës</h3>
-                  </div>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">E Hënë - E Premte</span>
-                      <span className="text-foreground">9:00 - 20:00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">E Shtunë</span>
-                      <span className="text-foreground">10:00 - 18:00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">E Diel</span>
-                      <span className="text-foreground">Me Takim</span>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Location */}
