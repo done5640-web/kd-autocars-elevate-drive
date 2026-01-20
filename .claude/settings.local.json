@@ -5,7 +5,10 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git checkout:*)",
-      "Bash(git merge:*)"
+      "Bash(git merge:*)",
+      "mcp__bll__directory_tree",
+      "mcp__bll__list_allowed_directories",
+      "Bash(npm install:*)"
     ]
   }
 }

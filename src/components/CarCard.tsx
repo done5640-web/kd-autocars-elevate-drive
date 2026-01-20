@@ -1,6 +1,7 @@
 import { Car } from "@/types/car";
 import { Button } from "@/components/ui/button";
 import { Calendar, Fuel, Gauge, Zap, Instagram, MessageCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface CarCardProps {
   car: Car;
@@ -9,11 +10,15 @@ interface CarCardProps {
 
 const CarCard = ({ car, onViewDetails }: CarCardProps) => {
   const isRental = car.type === "rent";
+  const navigate = useNavigate();
 
   return (
     <div className="card-premium rounded-xl overflow-hidden group">
       {/* Image Container */}
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div
+        className="relative aspect-[16/10] overflow-hidden cursor-pointer"
+        onClick={() => navigate(`/car/${car.id}`)}
+      >
         <img
           src={car.image}
           alt={`${car.brand} ${car.name}`}
@@ -43,9 +48,12 @@ const CarCard = ({ car, onViewDetails }: CarCardProps) => {
       {/* Content */}
       <div className="p-5">
         {/* Title */}
-        <div className="mb-3">
+        <div
+          className="mb-3 cursor-pointer"
+          onClick={() => navigate(`/car/${car.id}`)}
+        >
           <p className="text-muted-foreground text-sm uppercase tracking-wider">{car.brand}</p>
-          <h3 className="font-display text-2xl text-foreground">{car.name}</h3>
+          <h3 className="font-display text-2xl text-foreground hover:text-primary transition-colors">{car.name}</h3>
         </div>
 
         {/* Specs Grid */}

@@ -2,16 +2,75 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import CarCard from "./CarCard";
-import { carsForRent, carsForSale } from "@/data/cars";
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
+import { Car } from "@/types/car";
 
 interface FeaturedSectionProps {
   type: "rent" | "sale";
 }
 
 const FeaturedSection = ({ type }: FeaturedSectionProps) => {
-  const cars = type === "rent" ? carsForRent : carsForSale;
-  const featuredCars = cars.filter((car) => car.featured).slice(0, 3);
-  const displayCars = featuredCars.length > 0 ? featuredCars : cars.slice(0, 3);
+  const [cars, setCars] = useState<Car[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchCars();
+  }, [type]);
+
+  const fetchCars = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('cars')
+        .select('*')
+        .eq('type', type)
+        .eq('featured', true)
+        .order('created_at', { ascending: false })
+        .limit(3);
+
+      if (error) throw error;
+
+      const mappedCars = data?.map(car => ({
+        id: car.id,
+        created_at: car.created_at,
+        name: car.name,
+        brand: car.brand,
+        image: car.image_url,
+        image_url: car.image_url,
+        pricePerDay: car.price_per_day,
+        price_per_day: car.price_per_day,
+        salePrice: car.sale_price,
+        sale_price: car.sale_price,
+        year: car.year,
+        mileage: car.mileage,
+        fuel: car.fuel,
+        transmission: car.transmission,
+        power: car.power,
+        engine: car.engine,
+        type: car.type,
+        featured: car.featured,
+        specs: car.specs,
+      })) || [];
+
+      setCars(mappedCars);
+    } catch (error) {
+      console.error('Error fetching cars:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <section className="py-20 md:py-32">
+        <div className="container mx-auto px-4 text-center">
+          <p>Duke ngarkuar...</p>
+        </div>
+      </section>
+    );
+  }
+
+  const displayCars = cars.length > 0 ? cars : [];
 
   return (
     <section className="py-20 md:py-32">
