@@ -20,7 +20,7 @@ const Contact = () => {
                 Na Kontaktoni
               </p>
               <h1 className="font-display text-5xl md:text-7xl text-foreground mb-6">
-                Kontakt <span className="gradient-text">Neve</span>
+                Na <span className="gradient-text">kontaktoni</span>
               </h1>
               <p className="text-muted-foreground text-lg">
                 Keni pyetje rreth makinave tona? Dëshironi të planifikoni një vizitë ose të diskutoni çmimet?
