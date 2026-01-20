@@ -61,16 +61,13 @@ const FeaturedSection = ({ type }: FeaturedSectionProps) => {
   };
 
   if (loading) {
-    return (
-      <section className="py-20 md:py-32">
-        <div className="container mx-auto px-4 text-center">
-          <p>Duke ngarkuar...</p>
-        </div>
-      </section>
-    );
+    return null;
   }
 
-  const displayCars = cars.length > 0 ? cars : [];
+  // Don't render the section if there are no cars
+  if (cars.length === 0) {
+    return null;
+  }
 
   return (
     <section className="py-20 md:py-32">
@@ -95,7 +92,7 @@ const FeaturedSection = ({ type }: FeaturedSectionProps) => {
 
         {/* Cars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {displayCars.map((car) => (
+          {cars.map((car) => (
             <CarCard key={car.id} car={car} />
           ))}
         </div>
