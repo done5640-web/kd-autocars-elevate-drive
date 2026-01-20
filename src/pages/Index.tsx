@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import FeaturedSection from "@/components/FeaturedSection";
 import CTASection from "@/components/CTASection";
+import LocationSection from "@/components/LocationSection";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
@@ -14,6 +15,7 @@ const Index = () => {
         <FeaturedSection type="rent" />
         <FeaturedSection type="sale" />
         <CTASection />
+        <LocationSection />
       </main>
       <Footer />
       <WhatsAppFloat />

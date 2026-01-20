@@ -65,10 +65,15 @@ const Footer = () => {
                 <Mail size={16} />
                 kdrentalcar@gmail.com
               </a>
-              <span className="flex items-center gap-2 text-muted-foreground">
+              <a
+                href="https://maps.app.goo.gl/u6wKZB7DtjPEDNHH8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <MapPin size={16} />
-                Lokacioni Premium
-              </span>
+                Shiko Lokacionin
+              </a>
             </div>
           </div>
         </div>
