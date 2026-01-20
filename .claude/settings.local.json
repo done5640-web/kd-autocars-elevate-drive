@@ -9,7 +9,9 @@
       "mcp__bll__directory_tree",
       "mcp__bll__list_allowed_directories",
       "Bash(npm install:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(git restore:*)",
+      "Bash(git reset:*)"
     ]
   }
 }
