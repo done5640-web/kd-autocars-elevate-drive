@@ -90,7 +90,7 @@ const Contact = () => {
 
                 {/* Email Card */}
                 <a
-                  href="mailto:info@kdautocars.com"
+                  href="mailto:kdrentalcar@gmail.com"
                   className="card-premium p-6 rounded-xl flex items-center gap-6 group"
                 >
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
@@ -98,7 +98,7 @@ const Contact = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-display text-xl text-foreground mb-1">Email</h3>
-                    <p className="text-primary font-medium">info@kdautocars.com</p>
+                    <p className="text-primary font-medium">kdrentalcar@gmail.com</p>
                     <p className="text-muted-foreground text-sm">Për pyetje dhe partneritete</p>
                   </div>
                   <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" />

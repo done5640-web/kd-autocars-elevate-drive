@@ -61,7 +61,7 @@ npm run build
 
 - Instagram: [@kd.autocars](https://instagram.com/kd.autocars)
 - WhatsApp: +355 69 907 7779
-- Email: info@kdautocars.com
+- Email: kdrentalcar@gmail.com
 
 ## License
 

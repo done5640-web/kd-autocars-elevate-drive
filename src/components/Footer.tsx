@@ -59,11 +59,11 @@ const Footer = () => {
                 +355 69 907 7779
               </a>
               <a
-                href="mailto:info@kdautocars.com"
+                href="mailto:kdrentalcar@gmail.com"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail size={16} />
-                info@kdautocars.com
+                kdrentalcar@gmail.com
               </a>
               <span className="flex items-center gap-2 text-muted-foreground">
                 <MapPin size={16} />
