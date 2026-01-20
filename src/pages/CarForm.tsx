@@ -288,13 +288,12 @@ export default function CarForm() {
                 )}
 
                 <div className="space-y-2">
-                  <Label htmlFor="mileage">Kilometrazhi</Label>
+                  <Label htmlFor="mileage">Kilometrazhi (opsionale)</Label>
                   <Input
                     id="mileage"
                     value={formData.mileage}
                     onChange={(e) => setFormData({ ...formData, mileage: e.target.value })}
                     placeholder="p.sh. 50,000 km"
-                    required
                   />
                 </div>
 
@@ -310,24 +309,22 @@ export default function CarForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="transmission">Transmisioni</Label>
+                  <Label htmlFor="transmission">Transmisioni (opsionale)</Label>
                   <Input
                     id="transmission"
                     value={formData.transmission}
                     onChange={(e) => setFormData({ ...formData, transmission: e.target.value })}
                     placeholder="p.sh. Automatik"
-                    required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="power">Fuqia</Label>
+                  <Label htmlFor="power">Fuqia (opsionale)</Label>
                   <Input
                     id="power"
                     value={formData.power}
                     onChange={(e) => setFormData({ ...formData, power: e.target.value })}
                     placeholder="p.sh. 150 HP"
-                    required
                   />
                 </div>
               </div>
