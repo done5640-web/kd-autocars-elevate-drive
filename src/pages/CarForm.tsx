@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowLeft } from 'lucide-react';
+import imageCompression from 'browser-image-compression';
 
 export default function CarForm() {
   const { id } = useParams();
@@ -96,13 +97,23 @@ export default function CarForm() {
     setUploading(true);
 
     try {
-      const fileExt = file.name.split('.').pop();
+      // Compress image before upload
+      const options = {
+        maxSizeMB: 0.5, // Maximum file size 500KB (instead of 2-3MB)
+        maxWidthOrHeight: 1920, // Max dimension
+        useWebWorker: true,
+        fileType: 'image/webp', // Use WebP for better compression
+      };
+
+      const compressedFile = await imageCompression(file, options);
+
+      const fileExt = 'webp'; // Always use webp
       const fileName = `${Math.random().toString(36).substring(2)}.${fileExt}`;
       const filePath = `cars/${fileName}`;
 
       const { error: uploadError } = await supabase.storage
         .from('car-images')
-        .upload(filePath, file);
+        .upload(filePath, compressedFile);
 
       if (uploadError) throw uploadError;
 
@@ -112,7 +123,7 @@ export default function CarForm() {
 
       toast({
         title: 'Sukses',
-        description: 'Foto u ngarkua me sukses',
+        description: `Foto u ngarkua me sukses (${(compressedFile.size / 1024).toFixed(0)} KB)`,
       });
     } catch (error) {
       toast({

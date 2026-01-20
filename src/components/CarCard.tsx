@@ -23,6 +23,7 @@ const CarCard = ({ car, onViewDetails }: CarCardProps) => {
           src={car.image}
           alt={`${car.brand} ${car.name}`}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
         />
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />

@@ -4,7 +4,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/lib/supabase';
 import { Car } from '@/types/car';
 import { Button } from '@/components/ui/button';
-import { Plus, LogOut, Pencil, Trash2 } from 'lucide-react';
+import { Plus, LogOut, Pencil, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import {
   Table,
@@ -32,6 +32,9 @@ export default function Admin() {
   const [cars, setCars] = useState<Car[]>([]);
   const [loading, setLoading] = useState(true);
   const [deleteId, setDeleteId] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(0);
+  const ITEMS_PER_PAGE = 10;
 
   useEffect(() => {
     if (!user) {
@@ -39,14 +42,26 @@ export default function Admin() {
       return;
     }
     fetchCars();
-  }, [user, navigate]);
+  }, [user, navigate, currentPage]);
 
   const fetchCars = async () => {
     try {
+      // Get total count
+      const { count } = await supabase
+        .from('cars')
+        .select('*', { count: 'exact', head: true });
+
+      setTotalCount(count || 0);
+
+      // Get paginated data
+      const from = (currentPage - 1) * ITEMS_PER_PAGE;
+      const to = from + ITEMS_PER_PAGE - 1;
+
       const { data, error } = await supabase
         .from('cars')
         .select('*')
-        .order('created_at', { ascending: false });
+        .order('created_at', { ascending: false })
+        .range(from, to);
 
       if (error) throw error;
 
@@ -212,6 +227,57 @@ export default function Admin() {
             </TableBody>
           </Table>
         </div>
+
+        {/* Pagination */}
+        {totalCount > ITEMS_PER_PAGE && (
+          <div className="flex items-center justify-between mt-6">
+            <div className="text-sm text-muted-foreground">
+              Duke shfaqur {(currentPage - 1) * ITEMS_PER_PAGE + 1} deri {Math.min(currentPage * ITEMS_PER_PAGE, totalCount)} nga {totalCount} automjete
+            </div>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+              >
+                <ChevronLeft className="h-4 w-4 mr-1" />
+                Mbrapa
+              </Button>
+              <div className="flex items-center gap-1">
+                {Array.from({ length: Math.ceil(totalCount / ITEMS_PER_PAGE) }, (_, i) => i + 1)
+                  .filter(page => {
+                    // Show first page, last page, current page, and pages around current
+                    const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
+                    return page === 1 || page === totalPages || Math.abs(page - currentPage) <= 1;
+                  })
+                  .map((page, index, array) => (
+                    <div key={page} className="flex items-center">
+                      {index > 0 && array[index - 1] !== page - 1 && (
+                        <span className="px-2 text-muted-foreground">...</span>
+                      )}
+                      <Button
+                        variant={currentPage === page ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setCurrentPage(page)}
+                      >
+                        {page}
+                      </Button>
+                    </div>
+                  ))}
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentPage(p => Math.min(Math.ceil(totalCount / ITEMS_PER_PAGE), p + 1))}
+                disabled={currentPage >= Math.ceil(totalCount / ITEMS_PER_PAGE)}
+              >
+                Para
+                <ChevronRight className="h-4 w-4 ml-1" />
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
 
       <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>

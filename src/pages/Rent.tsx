@@ -6,22 +6,40 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Car } from "@/types/car";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Rent = () => {
   const [cars, setCars] = useState<Car[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(0);
+  const ITEMS_PER_PAGE = 9;
 
   useEffect(() => {
     fetchCars();
-  }, []);
+  }, [currentPage]);
 
   const fetchCars = async () => {
     try {
+      // Get total count
+      const { count } = await supabase
+        .from('cars')
+        .select('*', { count: 'exact', head: true })
+        .eq('type', 'rent');
+
+      setTotalCount(count || 0);
+
+      // Get paginated data
+      const from = (currentPage - 1) * ITEMS_PER_PAGE;
+      const to = from + ITEMS_PER_PAGE - 1;
+
       const { data, error } = await supabase
         .from('cars')
         .select('*')
         .eq('type', 'rent')
-        .order('created_at', { ascending: false });
+        .order('created_at', { ascending: false })
+        .range(from, to);
 
       if (error) throw error;
 
@@ -92,11 +110,58 @@ const Rent = () => {
                 <p className="text-xl text-muted-foreground">Nuk ka makina të disponueshme për qira në këtë moment.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {cars.map((car) => (
-                  <CarCard key={car.id} car={car} />
-                ))}
-              </div>
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {cars.map((car) => (
+                    <CarCard key={car.id} car={car} />
+                  ))}
+                </div>
+
+                {/* Pagination */}
+                {totalCount > ITEMS_PER_PAGE && (
+                  <div className="flex items-center justify-center gap-2 mt-12">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                      disabled={currentPage === 1}
+                    >
+                      <ChevronLeft className="h-4 w-4 mr-1" />
+                      Mbrapa
+                    </Button>
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: Math.ceil(totalCount / ITEMS_PER_PAGE) }, (_, i) => i + 1)
+                        .filter(page => {
+                          const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
+                          return page === 1 || page === totalPages || Math.abs(page - currentPage) <= 1;
+                        })
+                        .map((page, index, array) => (
+                          <div key={page} className="flex items-center">
+                            {index > 0 && array[index - 1] !== page - 1 && (
+                              <span className="px-2 text-muted-foreground">...</span>
+                            )}
+                            <Button
+                              variant={currentPage === page ? 'default' : 'outline'}
+                              size="sm"
+                              onClick={() => setCurrentPage(page)}
+                            >
+                              {page}
+                            </Button>
+                          </div>
+                        ))}
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setCurrentPage(p => Math.min(Math.ceil(totalCount / ITEMS_PER_PAGE), p + 1))}
+                      disabled={currentPage >= Math.ceil(totalCount / ITEMS_PER_PAGE)}
+                    >
+                      Para
+                      <ChevronRight className="h-4 w-4 ml-1" />
+                    </Button>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </section>
