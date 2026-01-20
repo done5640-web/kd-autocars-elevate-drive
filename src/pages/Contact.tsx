@@ -180,10 +180,31 @@ const Contact = () => {
                     <MapPin className="text-primary" size={24} />
                     <h3 className="font-display text-xl text-foreground">Lokacioni Ynë</h3>
                   </div>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground mb-4">
                     Salloni i automjeteve premium në një lokacion kryesor.
                     Na kontaktoni për udhëzime dhe takime për vizitë.
                   </p>
+                  <div className="mt-4 rounded-lg overflow-hidden border border-border">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.3872749366866!2d19.819343376544826!3d41.32821399933906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310470fac5b1%3A0x440partly8ec3c5c51!2sTirana%2C%20Albania!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                      width="100%"
+                      height="200"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="KD Autocars Location"
+                    ></iframe>
+                  </div>
+                  <a
+                    href="https://maps.app.goo.gl/u6wKZB7DtjPEDNHH8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-4 text-primary hover:text-primary/80 transition-colors"
+                  >
+                    <MapPin size={16} />
+                    Hap në Google Maps
+                  </a>
                 </div>
               </div>
             </div>
