@@ -27,13 +27,6 @@ const CarCard = ({ car, onViewDetails }: CarCardProps) => {
         />
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-        
-        {/* Featured Badge */}
-        {car.featured && (
-          <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-            E Zgjedhur
-          </div>
-        )}
 
         {/* Price Tag */}
         <div className="absolute bottom-4 right-4">
