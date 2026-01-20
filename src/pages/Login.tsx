@@ -28,10 +28,6 @@ export default function Login() {
         variant: 'destructive',
       });
     } else {
-      toast({
-        title: 'Sukses',
-        description: 'Jeni identifikuar me sukses',
-      });
       navigate('/admin');
     }
 

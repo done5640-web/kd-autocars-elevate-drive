@@ -138,32 +138,42 @@ export default function Admin() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary">
       <div className="container mx-auto px-4 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bebas">ADMIN DASHBOARD</h1>
-          <div className="flex gap-4">
-            <Button onClick={() => navigate('/admin/car/new')}>
-              <Plus className="mr-2 h-4 w-4" />
-              Shto Automjet
+        {/* Header */}
+        <div className="flex flex-col gap-4 mb-8 md:flex-row md:justify-between md:items-center">
+          <h1 className="text-3xl md:text-4xl font-bebas">ADMIN DASHBOARD</h1>
+          <div className="flex gap-2 md:gap-4">
+            <Button
+              onClick={() => navigate('/admin/car/new')}
+              className="flex-1 md:flex-none"
+            >
+              <Plus className="h-4 w-4 md:mr-2" />
+              <span className="hidden sm:inline">Shto Automjet</span>
+              <span className="sm:hidden">Shto</span>
             </Button>
-            <Button variant="outline" onClick={handleSignOut}>
-              <LogOut className="mr-2 h-4 w-4" />
-              Dil
+            <Button
+              variant="outline"
+              onClick={handleSignOut}
+              className="flex-1 md:flex-none"
+            >
+              <LogOut className="h-4 w-4 md:mr-2" />
+              <span className="hidden sm:inline">Dil</span>
+              <span className="sm:hidden">Dil</span>
             </Button>
           </div>
         </div>
 
-        <div className="bg-card rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-card rounded-lg shadow-lg overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Foto</TableHead>
-                <TableHead>Emri</TableHead>
-                <TableHead>Marka</TableHead>
-                <TableHead>Viti</TableHead>
-                <TableHead>Motorri</TableHead>
-                <TableHead>Tipi</TableHead>
-                <TableHead>Çmimi</TableHead>
-                <TableHead className="text-right">Veprime</TableHead>
+                <TableHead className="w-20">Foto</TableHead>
+                <TableHead className="min-w-[150px]">Emri</TableHead>
+                <TableHead className="hidden md:table-cell">Marka</TableHead>
+                <TableHead className="hidden lg:table-cell">Viti</TableHead>
+                <TableHead className="hidden lg:table-cell">Motorri</TableHead>
+                <TableHead className="hidden sm:table-cell">Tipi</TableHead>
+                <TableHead className="hidden sm:table-cell">Çmimi</TableHead>
+                <TableHead className="text-right w-24">Veprime</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -180,14 +190,21 @@ export default function Admin() {
                       <img
                         src={car.image}
                         alt={car.name}
-                        className="w-16 h-16 object-cover rounded"
+                        className="w-12 h-12 md:w-16 md:h-16 object-cover rounded"
                       />
                     </TableCell>
-                    <TableCell className="font-medium">{car.name}</TableCell>
-                    <TableCell>{car.brand}</TableCell>
-                    <TableCell>{car.year}</TableCell>
-                    <TableCell>{car.engine}</TableCell>
-                    <TableCell>
+                    <TableCell className="font-medium">
+                      <div className="flex flex-col">
+                        <span>{car.name}</span>
+                        <span className="text-xs text-muted-foreground md:hidden">
+                          {car.brand} • {car.year}
+                        </span>
+                      </div>
+                    </TableCell>
+                    <TableCell className="hidden md:table-cell">{car.brand}</TableCell>
+                    <TableCell className="hidden lg:table-cell">{car.year}</TableCell>
+                    <TableCell className="hidden lg:table-cell">{car.engine}</TableCell>
+                    <TableCell className="hidden sm:table-cell">
                       <span
                         className={`px-2 py-1 rounded text-xs ${
                           car.type === 'rent'
@@ -198,26 +215,28 @@ export default function Admin() {
                         {car.type === 'rent' ? 'Me Qera' : 'Në Shitje'}
                       </span>
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="hidden sm:table-cell">
                       {car.type === 'rent'
                         ? `€${car.pricePerDay}/ditë`
                         : `€${car.salePrice}`}
                     </TableCell>
                     <TableCell className="text-right">
-                      <div className="flex justify-end gap-2">
+                      <div className="flex justify-end gap-1">
                         <Button
                           variant="ghost"
                           size="icon"
                           onClick={() => navigate(`/admin/car/${car.id}`)}
+                          className="h-8 w-8"
                         >
-                          <Pencil className="h-4 w-4" />
+                          <Pencil className="h-3.5 w-3.5" />
                         </Button>
                         <Button
                           variant="ghost"
                           size="icon"
                           onClick={() => setDeleteId(car.id)}
+                          className="h-8 w-8"
                         >
-                          <Trash2 className="h-4 w-4 text-red-400" />
+                          <Trash2 className="h-3.5 w-3.5 text-red-400" />
                         </Button>
                       </div>
                     </TableCell>
@@ -230,19 +249,20 @@ export default function Admin() {
 
         {/* Pagination */}
         {totalCount > ITEMS_PER_PAGE && (
-          <div className="flex items-center justify-between mt-6">
-            <div className="text-sm text-muted-foreground">
+          <div className="flex flex-col gap-3 mt-6 md:flex-row md:items-center md:justify-between">
+            <div className="text-xs md:text-sm text-muted-foreground text-center md:text-left">
               Duke shfaqur {(currentPage - 1) * ITEMS_PER_PAGE + 1} deri {Math.min(currentPage * ITEMS_PER_PAGE, totalCount)} nga {totalCount} automjete
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-1.5 justify-center">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
+                className="h-9 px-3"
               >
-                <ChevronLeft className="h-4 w-4 mr-1" />
-                Mbrapa
+                <ChevronLeft className="h-4 w-4 md:mr-1" />
+                <span className="hidden md:inline">Mbrapa</span>
               </Button>
               <div className="flex items-center gap-1">
                 {Array.from({ length: Math.ceil(totalCount / ITEMS_PER_PAGE) }, (_, i) => i + 1)
@@ -254,12 +274,13 @@ export default function Admin() {
                   .map((page, index, array) => (
                     <div key={page} className="flex items-center">
                       {index > 0 && array[index - 1] !== page - 1 && (
-                        <span className="px-2 text-muted-foreground">...</span>
+                        <span className="px-1 md:px-2 text-muted-foreground text-sm">...</span>
                       )}
                       <Button
                         variant={currentPage === page ? 'default' : 'outline'}
                         size="sm"
                         onClick={() => setCurrentPage(page)}
+                        className="h-9 w-9 p-0"
                       >
                         {page}
                       </Button>
@@ -271,9 +292,10 @@ export default function Admin() {
                 size="sm"
                 onClick={() => setCurrentPage(p => Math.min(Math.ceil(totalCount / ITEMS_PER_PAGE), p + 1))}
                 disabled={currentPage >= Math.ceil(totalCount / ITEMS_PER_PAGE)}
+                className="h-9 px-3"
               >
-                Para
-                <ChevronRight className="h-4 w-4 ml-1" />
+                <span className="hidden md:inline">Para</span>
+                <ChevronRight className="h-4 w-4 md:ml-1" />
               </Button>
             </div>
           </div>
