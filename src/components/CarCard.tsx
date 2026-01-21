@@ -56,18 +56,22 @@ const CarCard = ({ car, onViewDetails }: CarCardProps) => {
             <Calendar size={14} className="text-primary" />
             <span>{car.year}</span>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground text-sm">
-            <Gauge size={14} className="text-primary" />
-            <span>{car.mileage}</span>
-          </div>
+          {car.mileage && (
+            <div className="flex items-center gap-2 text-muted-foreground text-sm">
+              <Gauge size={14} className="text-primary" />
+              <span>{car.mileage}</span>
+            </div>
+          )}
           <div className="flex items-center gap-2 text-muted-foreground text-sm">
             <Fuel size={14} className="text-primary" />
             <span>{car.fuel}</span>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground text-sm">
-            <Zap size={14} className="text-primary" />
-            <span>{car.power}</span>
-          </div>
+          {car.power && (
+            <div className="flex items-center gap-2 text-muted-foreground text-sm">
+              <Zap size={14} className="text-primary" />
+              <span>{car.power}</span>
+            </div>
+          )}
         </div>
 
         {/* Action Buttons */}

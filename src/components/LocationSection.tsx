@@ -48,7 +48,7 @@ const LocationSection = () => {
               </div>
               <div className="p-6 bg-card border-t border-border">
                 <a
-                  href="https://maps.google.com"
+                  href="https://maps.app.goo.gl/u6wKZB7DtjPEDNHH8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
