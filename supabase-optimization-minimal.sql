@@ -78,8 +78,9 @@ CREATE POLICY "Authenticated users can delete cars" ON cars
 -- 5. LIGHTWEIGHT MAINTENANCE (No Storage Impact)
 -- =====================================================
 
--- Simple vacuum to clean up
-VACUUM ANALYZE cars;
+-- Note: VACUUM cannot run in a transaction block
+-- After running this script, run this separately:
+-- VACUUM ANALYZE cars;
 
 
 -- =====================================================
