@@ -18,6 +18,8 @@ const Sale = () => {
 
   useEffect(() => {
     fetchCars();
+    // Scroll to top when page changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
 
   const fetchCars = async () => {
