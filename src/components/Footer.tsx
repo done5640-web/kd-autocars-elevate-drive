@@ -83,6 +83,9 @@ const Footer = () => {
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} KD Autocars. Të gjitha të drejtat e rezervuara.
           </p>
+          <p className="text-muted-foreground text-xs mt-2">
+            Zhvilluar nga <span className="text-primary font-medium">Alar Dev</span>
+          </p>
         </div>
       </div>
     </footer>
