@@ -96,23 +96,25 @@ const FeaturedSection = ({ type }: FeaturedSectionProps) => {
         </div>
 
         {/* Cars Carousel */}
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <CarouselContent>
-            {cars.map((car) => (
-              <CarouselItem key={car.id} className="md:basis-1/2 lg:basis-1/3">
-                <CarCard car={car} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
-        </Carousel>
+        <div className="relative px-12 md:px-0">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {cars.map((car) => (
+                <CarouselItem key={car.id} className="md:basis-1/2 lg:basis-1/3">
+                  <CarCard car={car} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 md:-left-12 h-10 w-10 md:h-8 md:w-8" />
+            <CarouselNext className="right-0 md:-right-12 h-10 w-10 md:h-8 md:w-8" />
+          </Carousel>
+        </div>
       </div>
     </section>
   );
