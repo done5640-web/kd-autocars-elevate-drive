@@ -5,13 +5,6 @@ import CarCard from "./CarCard";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Car } from "@/types/car";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 interface FeaturedSectionProps {
   type: "rent" | "sale";
@@ -31,7 +24,9 @@ const FeaturedSection = ({ type }: FeaturedSectionProps) => {
         .from('cars')
         .select('*')
         .eq('type', type)
-        .order('created_at', { ascending: false });
+        .eq('featured', true)
+        .order('created_at', { ascending: false })
+        .limit(3);
 
       if (error) throw error;
 
@@ -95,25 +90,11 @@ const FeaturedSection = ({ type }: FeaturedSectionProps) => {
           </Link>
         </div>
 
-        {/* Cars Carousel */}
-        <div className="relative">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {cars.map((car) => (
-                <CarouselItem key={car.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <CarCard car={car} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-2 md:-left-12 h-10 w-10 md:h-8 md:w-8 bg-background/80 backdrop-blur-sm" />
-            <CarouselNext className="right-2 md:-right-12 h-10 w-10 md:h-8 md:w-8 bg-background/80 backdrop-blur-sm" />
-          </Carousel>
+        {/* Cars Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cars.map((car) => (
+            <CarCard key={car.id} car={car} />
+          ))}
         </div>
       </div>
     </section>
